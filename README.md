@@ -80,7 +80,7 @@ I initially approached things very methodically with the aim of building somethi
 ##### Dashboard Main `/auth/{id}`
 
    - User Controlled
-   - general information
+   - general information (a little out of date, you can see that a few of my expectations didn't have time to be completed)
 
 ##### User Management `/auth/{id}/users`
 
