@@ -31,12 +31,22 @@ I initially approached things very methodically with the aim of building somethi
 2. `npm run prod:build` - Builds production bundles
 3. `npm run prod:start` - Starts Express server for SSR, ready
 
+##### Getting Started
+
+1. Admin: admin@example.com, ******** (as in .PDF)
+2. Feel free to register other self-registering Users, or create more as an Admin (you can create Admins, too).
+3. Created User/Admins have a password matching their email.
+4. Create some Groups, and add Users to them.
+5. Create some Polls, and execute Distributions.
+6. Find Mocks after executing Distribution in "Distribution Meta" page. Or, use the provided SendGrid API if you are registering real email accounts.
+7. Review "Response History", "Distribution Meta", and "Single User" pages after some activity.
+
 ---
 
 ### Features
 
 - Multiple admins with individually scoped Users, Groups, Polls, Questions, and Distributions (of polls)
-- Admins can create other Users, or Admins
+- Admins can create other Users, or Admins *Admin created users have a password of their email*
 - Users can be placed into admin Groups and Groups can be Distributed Polls
 - Repeater field can be used to build Polls with Questions
 - Each Distribution can be tracked, and each question is a "yes" | "no" enum response. The statistics are monitored.
