@@ -64,53 +64,53 @@ I initially approached things very methodically with the aim of building somethi
 
 ##### Home `/`
 
-a. Public
-b. Landing page
+   - Public
+   - Landing page
 
 ##### Login `/users/login`
 
-a. Public
-b. login page
+   - Public
+   - login page
 
 ##### Register `/users/register`
 
-a. Public
-b. registration page (for self-registering users open to all-admin scopes)
+   - Public
+   - registration page (for self-registering users open to all-admin scopes)
 
 ##### Dashboard Main `/auth/{id}`
 
-a. User Controlled
-b. general information
+   - User Controlled
+   - general information
 
 ##### User Management `/auth/{id}/users`
 
-a. dmin Controlled
-b. create and view your scoped users
+   - Admin Controlled
+   - create and view your scoped users
 
 ##### Group Management `/auth/{id}/groups`
 
-a. dmin Controlled
-b. Create groups and add users. Users that self register are availaable to your scope.
+   - Admin Controlled
+   - Create groups and add users. Users that self register are availaable to your scope.
 
 ##### Poll Delegation `/auth/{id}/polls`
 
-a. dmin Controlled
-b. Create Polls and send distributions. You can use SendGrid, or Mock the email.
+   - Admin Controlled
+   - Create Polls and send distributions. You can use SendGrid, or Mock the email.
 
 ##### Distribution Meta `/auth/{id}/distributions`
 
-a. dmin Controlled
-b. Mocks links go here. We dig into each admin-created distribution of a poll. A Poll can be distributed multiple times, and each distribution has responses. Here we can view a lot of details about the distribution(s) state.
+   - Admin Controlled
+   - Mocks links go here. We dig into each admin-created distribution of a poll. A Poll can be distributed multiple times, and each distribution has responses. Here we can view a lot of details about the distribution(s) state.
 
 ##### Response History `/auth/{id}/responses`
 
-a. User Controlled
-b. View Auth Responses, Received Responses, and Sent Distributions. General Overview.
+   - AUser Controlled
+   - View Auth Responses, Received Responses, and Sent Distributions. General Overview.
 
 ##### Single User `/auth/{id}/users/{userId}`
 
-a. dmin Controlled
-b. Accessible only through link in Response History. View individual user statistics.
+   - Admin Controlled
+   - Accessible only through link in Response History. View individual user statistics.
 
 ### Issues Encountered
 
