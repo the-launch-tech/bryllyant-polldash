@@ -6,6 +6,36 @@ This was very fun. I've never used TypeORM or NestJS and got rather obsessed. I 
 
 I initially approached things very methodically with the aim of building something that had an architecture that could be expanded with more features rather than just meeting the short-term requirements - just in principle. If I had more time I would continue refactoring the things that were completed towards the end. I also would have used Bootstrap or Material Design instead of doing all the SCSS in order to reduce some overhead in style writing.
 
+We talked about Generic Types, and this gave me a good oppurtinity to utilize them more. This is a new implementation I've tried for redux-thunks in order to make maximally reusable and typed thunks. It worked really well.
+
+```typescript
+File: /client/redux/thunks/Generic.ts
+
+export async function findOne<R, C>(dispatch: WrappedThunkDispatch<never>, ...options: any[]) {
+  const findOneThunk: WrappedThunkActionCreator<Data<any>> = (
+    prefix: string,
+    id: number,
+    callback?: C
+  ) => async (
+    dispatch: WrappedThunkDispatch<AxiosStatic>,
+    getState: () => State,
+    Http: AxiosStatic
+  ): Promise<Data<R>> => {
+    try {
+      const response: Data<R> = await HttpService.findOne<R>(Http, { prefix, id })
+      if (typeof callback === 'function') {
+        await callback(response)
+      }
+      return response
+    } catch (err) {
+      throw err
+    }
+  }
+
+  return await dispatch(findOneThunk(...options))
+}
+```
+
 ---
 
 ### Setup
