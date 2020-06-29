@@ -34,6 +34,21 @@ export async function findOne<R, C>(dispatch: WrappedThunkDispatch<never>, ...op
 
   return await dispatch(findOneThunk(...options))
 }
+
+Usage of a "Generic Thunk" (create(), but same idea): /client/redux/maps/dispatch.ts
+
+...
+createDistribution: async (options: Create<CreateDistribution>) => {
+  return await GenericThunk.create<Distribution, CreateDistribution, Function>(
+    dispatch,
+    'distributions',
+    options.body,
+    (response: Model<Distribution>): void => {
+      dispatch(DistributionAction.create(response))
+    }
+  )
+},
+...
 ```
 
 ---
